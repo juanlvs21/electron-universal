@@ -1,0 +1,32 @@
+{
+    "name": "universal-electron",
+    "version": "1.0.0",
+    "description": "Aplicaciones de escritorio con electron",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron  main.js",
+        "dev": "nodemon src/index.js",
+        "webpack": "webpack --mode development",
+        "package-mac": "electron-packager . NombreAplicacion --overwrite --platform=darwin --arch=x64 --icon=src/favicon.icns --prune=true --out=release-builds",
+        "package-win": "electron-packager . NombreAplicacion --overwrite --platform=win32 --arch=ia32 --icon=src/favicon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron App\"",
+        "package-linux": "electron-packager . NombreAplicacion --overwrite --asar=true --platform=linux --arch=x64 --icon=src/favicon.png --prune=true --out=release-builds"
+    },
+    "author": "Juan Villarroel <juanlvs97@gmail.com>",
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {
+        "@babel/core": "^7.0.0",
+        "@babel/preset-env": "^7.0.0",
+        "babel-core": "^6.26.3",
+        "babel-loader": "^7.1.5",
+        "babel-plugin-transform-async-to-generator": "^6.24.1",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-react": "^6.24.1",
+        "electron": "^2.0.9",
+        "electron-forge": "^5.2.2",
+        "electron-packager": "^12.1.1",
+        "electron-prebuilt-compile": "latest",
+        "webpack": "^4.17.1",
+        "webpack-cli": "^3.1.0"
+    }
+}
